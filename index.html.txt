@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madison Kain | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f0f0f;
+      color: #eaeaea;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      animation: fadeInDown 1s ease-out;
+    }
+    nav {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #bbb;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    section.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+    .timeline {
+      position: relative;
+      margin: 3rem 0;
+      padding-left: 2rem;
+      border-left: 2px solid #444;
+    }
+    .event {
+      position: relative;
+      margin-bottom: 2.5rem;
+      cursor: pointer;
+    }
+    .event h3 {
+      margin: 0 0 0.5rem;
+      color: #a8dadc;
+      font-size: 1.25rem;
+    }
+    .event time {
+      font-size: 0.9rem;
+      color: #888;
+    }
+    .event p {
+      margin-top: 0.5rem;
+      color: #ccc;
+    }
+    .event:hover {
+      transform: translateX(5px);
+      transition: transform 0.2s ease-in-out;
+    }
+    .event a {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+    }
+    .event a:hover h3 {
+      text-decoration: underline;
+    }
+    .writing-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .writing-list a {
+      font-size: 1.1rem;
+      color: #8ecae6;
+      text-decoration: none;
+      font-style: italic;
+      border-bottom: 1px dashed #444;
+      padding-bottom: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    .writing-list a:hover {
+      color: #fff;
+      border-color: #8ecae6;
+      transform: translateX(4px);
+    }
+    #contact {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    #contact p {
+      font-size: 1.1rem;
+    }
+    #contact a {
+      color: #8ecae6;
+      text-decoration: none;
+    }
+    #contact a:hover {
+      text-decoration: underline;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Madison Kain</h1>
+    <p>Creative Technologist | Legal Strategist | Digital Architect</p>
+  </header>
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#writings">Writings</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="projects" class="reveal-section">
+    <h2>Project Timeline</h2>
+    <div class="timeline">
+      <div class="event">
+        <a href="projects/ai-case-study.html">
+          <h3>AI Case Study</h3>
+          <time>2025</time>
+          <p>Published a legal analysis on AI ethics and copyright at UQ, exploring implications for digital IP law.</p>
+        </a>
+      </div>
+      <div class="event">
+        <a href="projects/social-impact-campaign.html">
+          <h3>Social Impact Campaign</h3>
+          <time>2024</time>
+          <p>Designed and led a digital strategy campaign that boosted community engagement metrics by 72%.</p>
+        </a>
+      </div>
+      <div class="event">
+        <a href="projects/ethics-law-debate.html">
+          <h3>Ethics Law Debate</h3>
+          <time>2023</time>
+          <p>Represented UQ at the National Ethics Moot; awarded Best Speaker for closing arguments on moral relativism.</p>
+        </a>
+      </div>
+      <div class="event">
+        <a href="projects/ux-audit.html">
+          <h3>UX Audit of Government Website</h3>
+          <time>2022</time>
+          <p>Completed an in-depth UX analysis on a state services platform as part of a pro bono digital inclusion project.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="writings" class="reveal-section">
+    <h2>Published Writings</h2>
+    <div class="writing-list">
+      <a href="#">The Ethics of AI in Practice – UQ School of Law, 2025</a>
+      <a href="#">Political Cynicism in Modern Voters – School Magazine, 2024</a>
+      <a href="#">Exploring Part Performance in Property Law – Legal Draft, 2023</a>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal-section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:madison@example.com">madison@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/madisonkain">linkedin.com/in/madisonkain</a></p>
+  </section>
+
+  <script>
+    const sections = document.querySelectorAll('.reveal-section');
+    const revealOnScroll = () => {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < trigger) sec.classList.add('reveal');
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</body>
+</html>
